@@ -1,0 +1,50 @@
+Sitios hechos con Angular ->   https://www.madewithangular.com/sites
+
+Iconos incoscout -> https://iconscout.com/unicons
+
+Configurar en el archivo tsconfig.json para poder importar json dentro de los componentes ->  "resolveJsonModule": true
+
+Brand Color : Establecer las variables de diseño. Colores, Fuentes, Bordes, Etc. -> Se implemente en el styles.css PRINCIPAL
+
+Scaffolding (Andamio): Estructura de carpetas para facilitar la mantenibilidad y la escalabilidad. 
+		- Auth
+		- Home
+		- Tracks
+		- History
+		- Favorites
+
+MODULES  (ng generate module ./modules): la carpeta modules, va a contener cada uno de los modulos que nosotros vamos a usar POR EJEMPLO:
+	- modulo Auth, puede contener:
+		- routes	
+		- components
+		- services
+		- pipes	
+
+MODULOS y RUTAS -> video 14 , se explica un poco la estructura de un modulo, y la principal idea para trabajar los componentes. y se configura una ruta y un componente (ng generate component)
+
+video 15 : Mòdulo compartido - shared.module (ng g m shared/Shared)
+
+
+-----······· SECCIÓN 4 ·······-------
+Video 16 : LazyLoading -> carga perezosa : ROUTES y optimización de tu app: Basicamente este termino indic que gestione sus modulos para cuando el usuario lo deba usar, y no todos al mismo tiempo en todo momento.
+- ya aqui se creo un componente y se hizo la ruta
+- Se genero un componente compartido y se enruto con lazyloading 
+- se crea un componente de pagina (ng g c modules/home/pages/HomePage)
+
+video 17 : Path -> estableces alias a rutas de estructura -@core , -@modules
+
+video 18 : pages -> componente que està relacionado directamente con una ruta
+
+video 19: 
+
+video 20: ng-template - ng-container -> permite ser más ordenado al momento de escribir el código , tambièn ngcontainer no aparece en la secciòn de inspeccionar , lo que hace que no se cargue lo que no sea necesario y no permita ver que hay allì. [Un contenedor va asociado a un template]
+
+video 21: Comunicación entre componentes : Se explican los @input en un componente y como usarlo desde otro componente, también se muestra el pipe json para saber el contenido de un objeto que se pasa por un input -> ejemplo : {{objeto | json}}
+
+video 22: Modelos InterfaceS -> se crean los modelos de los datos que se usan en el tracks.json
+		-> iMPORTANTE ver concepto de desestructuraciòn de javaScript  ->   const {data}:any = (dataRaw as any).default
+		-> Se configura todo el tema de componente generico , y los card-player-component , los cuales se usan en el modulo tracks, en su componente tracks, el cual es el padre.
+
+video 23: Contexto (ng-template) -> se termina de estructurar un poco màs las paginas y las rutas. En la pagina favoritos tambien se conforma por dos componentes y esta se configura aquí.
+
+video 24: Rutas-> se muestran dos formas de colocar las rutas para viajar entre paginas , directiva [routerLink]

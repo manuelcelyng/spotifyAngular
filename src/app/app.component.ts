@@ -8,6 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'spotify'; 
 
+  registrado = true;
+  nombre="manuel"
+  apellido="cely"
+  cargo="director"
+  mensaje= "hola como vas"
+
 
 }
 
