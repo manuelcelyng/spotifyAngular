@@ -48,3 +48,5 @@ video 22: Modelos InterfaceS -> se crean los modelos de los datos que se usan en
 video 23: Contexto (ng-template) -> se termina de estructurar un poco màs las paginas y las rutas. En la pagina favoritos tambien se conforma por dos componentes y esta se configura aquí.
 
 video 24: Rutas-> se muestran dos formas de colocar las rutas para viajar entre paginas , directiva [routerLink]
+
+video 25: Pipe (Filtros) -> se hace un ejemplo de un pipe, el cual se usa en el componente play-list-body para ordenar ascendente o descendente por unos parametros

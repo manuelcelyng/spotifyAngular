@@ -10,11 +10,27 @@ export class PlayListBodyComponent implements OnInit {
 
   tracks:Array<TrackModel> = []
 
+
+  optionSort:{   //TODO: Es un objeto, y debe inicializarse con algo.
+    property:string | null,
+    order: string
+  }  =  { property: null, order:'asc'}
+
   constructor() { }
 
   ngOnInit(): void {
     const {data}:any = (dataRaw as any).default
     this.tracks =  data;
+  }
+
+  changeSort(property:string): void {
+
+    const {order} = this.optionSort
+    this.optionSort = {
+      property :  property,
+      order : order==='asc' ? 'desc' : 'asc'
+    }
+
   }
 
 }
