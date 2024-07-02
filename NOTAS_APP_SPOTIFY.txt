@@ -49,4 +49,9 @@ video 23: Contexto (ng-template) -> se termina de estructurar un poco màs las p
 
 video 24: Rutas-> se muestran dos formas de colocar las rutas para viajar entre paginas , directiva [routerLink]
 
-video 25: Pipe (Filtros) -> se hace un ejemplo de un pipe, el cual se usa en el componente play-list-body para ordenar ascendente o descendente por unos parametros
+video 25: Pipe (Filtros) -> se hace un ejemplo de un pipe, el cual se usa en el componente play-list-body para ordenar ascendente o descendente por unos parámetros
+
+video 26: Directivas (Manejar elementos del DOM) -> Se crea una directiva para manejar el elemento img de HTML, para manejar una imagen por defecto en caso de que no se cargue la imagen correcta del componente. Esta directiva recibe como input, la url del recurso a usar (Una imagen por defecto) y tiene  un HostListener, para escuchar errores de parte del componente img, en caso de haber un error , este lo captura y utiliza la url pasada para colocar la imagen y así no dejar que se vea sin fondo el card.
+
+video 27: Formulario login - Formularios reactivos: En este video, el objetivo fue comunicar el card player que se tiene en el panel, y comunicarlo con el media player, para esto la idea es que al presionar el botón de play, la canción sea enviada al media player para que lo reproduzca. Esto se hizo usando programación reactiva, para comunicar los componentes, por lo que se ven los conceptos de EventEmitter, subscribe and unsubscribe , emit , onDestroy. para cumplir con el flujo 
+
