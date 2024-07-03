@@ -13,7 +13,8 @@ import { SharedModule } from '@shared/shared.module';
   imports: [
     CommonModule,
     TracksRoutingModule,
-    SharedModule
+    SharedModule,
+
   ]
 })
 export class TracksModule { }
