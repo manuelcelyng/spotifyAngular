@@ -55,3 +55,21 @@ video 26: Directivas (Manejar elementos del DOM) -> Se crea una directiva para m
 
 video 27: Formulario login - Formularios reactivos: En este video, el objetivo fue comunicar el card player que se tiene en el panel, y comunicarlo con el media player, para esto la idea es que al presionar el botón de play, la canción sea enviada al media player para que lo reproduzca. Esto se hizo usando programación reactiva, para comunicar los componentes, por lo que se ven los conceptos de EventEmitter, subscribe and unsubscribe , emit , onDestroy. para cumplir con el flujo 
 
+
+video 28: Servicios -> se crean servicios dentro del modulo Tracks y este se usa allí y en el side bar, se muestra mediante programación reactiva como crear un observer y subscribirse a el y además indtroducirle un dato nuevo que aparece luego de 4 segundos, en este se uso Observer,of()  y el conecpto next que tiene un objeto tipo observer.
+
+video 29. Se sigue el ejercicio complementando al video 28
+
+----//////#### SECCION 7 : HTTPClient, API y mÁS   ######////////////// ------------
+
+video 30. API Node(Demo)  - Angular HTTP CLIENT -> Se baja una api que contiene los tracks,  y se usara en la demo, se configura y se modifica el servicio de tracks para traer la info de la api con http client de la librería @angular/common/http
+
+video 31: HTTP Conexión -> Se configura el servicio con el httpclient nuevamente y ahora se explica el uso de PIPE (Filtro) PERO este filtro no es el de angular, este filtro es el que se le puede aplicar a las subscripciones y hacen parte de la programación reactiva, se explica el uso de estos pipes y como nos ayudan , además de que se hace un ejemplo donde se usa una promesa para usarla dentro de un pipe en la petición http.
+
+Video 32: Se modifica el tracks-page-component.ts para mostrar lo siguiente: el observable también se puede funcionar como una promesa, puese llamarse usando el método async con await en modo topromise. 
+Para manejar errores se muestra el uso de catchError e RxJS, para usarlo preferiblemente en el pipe de la petición y no en el subscriibe del observable.
+Se explica el manejo del catch error , y su importancia.
+
+----//////#### SECCION 8 : Proteger rutas con sesión de usuario.  ######////////////// ------------
+Video 33: Post Login y Cookie.
+ 
