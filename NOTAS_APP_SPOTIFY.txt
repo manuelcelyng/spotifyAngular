@@ -71,5 +71,12 @@ Para manejar errores se muestra el uso de catchError e RxJS, para usarlo preferi
 Se explica el manejo del catch error , y su importancia.
 
 ----//////#### SECCION 8 : Proteger rutas con sesión de usuario.  ######////////////// ------------
-Video 33: Post Login y Cookie.
+Video 33: Post Login y Cookie: Se implementa en el auth.services.ts el uso de un post para enviar las credenciales de usuario.
+además se configuro y mostro el ejemplod de uso del token de sesion, tanto del lado del servicio como del lado del componente.
  
+Video 34: Guards - Vigilantes de las rutas -> ng generate guard ruta/nombre_guard  : Se le coloco un guardian a la ruta principal del homecomponent, estos guardianes
+se pueden usar para permitir el acceso a la ruta, en el ejemplo se validaba el usode token de sesion para permitir el paso, además de redirigir a otra ruta en caso de no tener el token
+
+Video 35:  Interceptores -> Inyectar propiedades directamente en las peticiones  , comando para generar un inyector: ng generate interceptor core/interceptors/InjectSession
+Se muestra un ejemplo de agregar un header con autorizathion token , pero si esto se hace manual por cada peticion que existe todo se vuelve un bololo, por ende nace
+la necesidad de usar inyectores, para manejarlo. En pocas palabras, toma un request y me permite meterle más info adicional, sin necesidad de escribir el codigo en el lugar del llamado
