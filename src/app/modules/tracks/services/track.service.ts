@@ -62,7 +62,7 @@ export class TrackService {
       //     return dataRevertida.filter((track:TrackModel) => track._id != 1)
       //   }
       // )
-      tap(data => console.log(data, '🙌🔴🔴')), //TODO: para poder hacer un console.log dentro del pipe 
+      //tap(data => console.log(data, '🙌🔴🔴')), //TODO: para poder hacer un console.log dentro del pipe 
       catchError(
         (err) => {
           const { status, statusText}  = err;

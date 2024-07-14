@@ -14,7 +14,7 @@ export class InjectSessionInterceptor implements HttpInterceptor {
   constructor(private cookieService:CookieService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    console.log('HOlaaa! 🙌🙌🙌🙌', request)
+    //console.log('HOlaaa! 🙌🙌🙌🙌', request)
     
     
 

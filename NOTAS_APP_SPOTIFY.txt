@@ -99,4 +99,29 @@ Video 37 : Pipe ASYNC  (Se quiere resolver el problema de generación de muchas 
 	- Se muestra el uso de pipe async en la etiqueta html de un componente, para indicar que alli angular se encarge de manejar la desubscripcion a un observable
 	con el fin de que la peticion solo sea tomada en cuanta la ultima vez que se lanza el evento, y no se genere una cola de peticiones en la aplicacion 
 
-Video 38 : 
+Video 38 : RxJS observable : se explica haciendo comunicacion entre el servicio multimedia.service y el componente media-player-component
+		Se explica el concepto del observable, observer y sus estados de netx, complete, error, y como fluye.
+
+Video 39 : RxJs Subject y BehaviorSubjecT : 
+	- Subject -> es un objeto que es observable y observer al mismo tiempo , lo que le permite llamar el método next directamente.
+	- BehaviorSubject -> es un objeto igualmente observable y observer al mismo tiempo pero que se debe inicializar
+
+	-Ambbos observables funcionan igual, cambian sus comportamientos en términos de ciclos de vida -----> Estudiar la programación reactiva !!!!! 
+
+---------//////###### SECCION 10:  REPRODUCTOR DE AUDIO #######\\\\\\\\\\\\ -----------------------------
+
+Video 40: Dale play a tu reproductor : Se trabaja en el componente media-player-component , se usa el multimedia service de manera publica, para darle dinamismo a la app desde el HTML y no desde el typescript.
+	- En el servicio de multimedia.service se usa public audio!:HTMLAudioElement;  el cual se le inyecta  el src, de donde va a traer la canción y este es un elemento tipo audio :D
+	- en multimedia.service también se crea el BehaviorSubject -> public trackInfo$: BehaviorSubject<any> = new BehaviorSubject(undefined) -> Ahí mismo en el constructor nos subscribimos para escuchar el track que llega y lograr pasar el url del track al audio element.
+
+Video 41: Obtener tiempo transcurrido y restante de la canción : 
+	- Ver documentación de HTML de las etiquetas audio/video -> Aquí vamos a escuchar eventos.
+	- En el archivo multimedia.service se hizo la lógica para el tema del tiempo actual y el faltante en la vista del htlm en el media-player-component
+
+
+
+
+
+
+
+
