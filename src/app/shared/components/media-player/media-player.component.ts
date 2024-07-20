@@ -10,13 +10,21 @@ import { Subscription } from 'rxjs'; //TODO: Programación reactiva
 })
 export class MediaPlayerComponent implements OnInit, OnDestroy {
 
-
+  state:string='paused'
 
   listObservers$: Array<Subscription> = []
 
   constructor(public multimediaService:MultimediaService) { }
 
   ngOnInit(): void {
+    const observer1$ = this.multimediaService.playerStatus$.subscribe(
+      (status) => {
+        this.state = status
+        
+      }
+    )
+
+    this.listObservers$ = [observer1$]
   
   }
 
