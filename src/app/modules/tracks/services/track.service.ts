@@ -55,7 +55,7 @@ export class TrackService {
     return this.httpClient.get(`${this.URL}/tracks`)
     .pipe(
       mergeMap(  //TODO: Usando una promesa <3
-        ({data}:any) => this.skipById(data, 1)
+        ({data}:any) => this.skipById(data, 2)
       ),
       // map(
       //   (dataRevertida:any) => {

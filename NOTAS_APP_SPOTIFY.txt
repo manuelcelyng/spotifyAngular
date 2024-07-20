@@ -119,6 +119,13 @@ Video 41: Obtener tiempo transcurrido y restante de la canción :
 	- En el archivo multimedia.service se hizo la lógica para el tema del tiempo actual y el faltante en la vista del htlm en el media-player-component
 
 
+Video 42 Pause y Play : Se trabaja en los eventos de la etiqueta audio para capturar eventos de pausa y play, para asi cambiar en la vista el icono dependiendo del estado, además de pausar y continuar la canción.
+
+Video 43: Mostrar Progreso del Reproductor : Se realiza el calculo para mostrar el progreso del reproductor, haciendo el calculo con el tiempo de duracion de la cancion, el tiempo actual y modificando el estilo with del componente HTML que contiene el diseño del progress bar
+
+Video 44: Navegar mediante la barra de progreso :  Se agrega la funcionalidad, en el multimedia.service  y el media-player.component para que al dar click sobre el progressBar , se pueda aumentar le tiempo de la cancion en donde demos click
+
+
 
 
 

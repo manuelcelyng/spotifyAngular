@@ -75,13 +75,15 @@ export class MultimediaService {
     //console.table([duration, currentTime])
     this.setTimeElapsed(currentTime)
     this.setTimeRemaining(currentTime, duration)
+    this.setPercentage(currentTime, duration)
   }
 
-  private serPercentage(currentTime:number, duration:number):void {
+  private setPercentage(currentTime:number, duration:number):void {
     //TODO duration ---> 100%
     //TODO currentTime ---> (x)
     //TODO (currentTime * 100 ) / duration
-    let percentage 
+    let percentage = (currentTime * 100) / duration
+    this.playerPercentage$.next(percentage)
   }
 
   private setTimeElapsed(currentTime:number):void {
@@ -116,6 +118,20 @@ export class MultimediaService {
   public togglePlayer(): void {
     (this.audio.paused ) ? this.audio.play() : this.audio.pause()
     console.log("entro")
+  }
+
+
+  public seekAudio(percentage:number): void{
+    //TODO tenemos el valor de X en porcentaje al dar click en la barra de media player
+    
+    const {duration} = this.audio; //TODO : retorna la duracion en segundos
+
+    //TODO: regla de 3
+    //TODO:  100% ->  duration
+    //TODO   x%   ->    ?
+
+    const percentageToSecond =  (percentage*duration)/100;
+    this.audio.currentTime = percentageToSecond; 
   }
 
 
