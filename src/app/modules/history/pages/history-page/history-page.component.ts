@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { TrackModel } from '@core/models/tracks.model';
+import { SearchService } from '@modules/history/services/search.service';
+import { of,Observable } from 'rxjs';
 
 @Component({
   selector: 'app-history-page',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryPageComponent implements OnInit {
 
-  constructor() { }
+  listResults$:Observable<any> = of([]);
+
+
+  constructor(private searchService: SearchService) { }
 
   ngOnInit(): void {
+  }
+
+  receiveData(event:string):void {
+    //TODO: Agarras el termino y sabes que solo se ejecuta cuando tienes 3 caracteres 
+    console.log("ESTOY EN EL PADRE")
+    this.listResults$ = this.searchService.searchTracks$(event)
+  
   }
 
 }

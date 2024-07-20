@@ -4,9 +4,8 @@
 
 export const environment = {
   production: false,
-  api:'http://localhost:3100/api/1.0/'
+  api: 'http://localhost:3100/api/1.0'
 };
-
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

@@ -31,11 +31,11 @@ Video 16 : LazyLoading -> carga perezosa : ROUTES y optimización de tu app: Bas
 - Se genero un componente compartido y se enruto con lazyloading 
 - se crea un componente de pagina (ng g c modules/home/pages/HomePage)
 
-video 17 : Path -> estableces alias a rutas de estructura -@core , -@modules
+video 17 : Path -> estableces alias a rutas de estructura -@core , -@modules en el archivo tsconfig.json
 
-video 18 : pages -> componente que està relacionado directamente con una ruta
+video 18 : pages -> componente que està relacionado directamente con una ruta -> el logingPage 
 
-video 19: 
+video 19: -> Se explica un poco el funcionamiento del router-outlet -> [ IMPORTANTE ]
 
 video 20: ng-template - ng-container -> permite ser más ordenado al momento de escribir el código , tambièn ngcontainer no aparece en la secciòn de inspeccionar , lo que hace que no se cargue lo que no sea necesario y no permita ver que hay allì. [Un contenedor va asociado a un template]
 
@@ -47,7 +47,7 @@ video 22: Modelos InterfaceS -> se crean los modelos de los datos que se usan en
 
 video 23: Contexto (ng-template) -> se termina de estructurar un poco màs las paginas y las rutas. En la pagina favoritos tambien se conforma por dos componentes y esta se configura aquí.
 
-video 24: Rutas-> se muestran dos formas de colocar las rutas para viajar entre paginas , directiva [routerLink]
+video 24: Rutas-> se muestran dos formas de colocar las rutas para viajar entre paginas , directiva [routerLink], Y router navigator
 
 video 25: Pipe (Filtros) -> se hace un ejemplo de un pipe, el cual se usa en el componente play-list-body para ordenar ascendente o descendente por unos parámetros
 
@@ -57,8 +57,8 @@ video 27: Formulario login - Formularios reactivos: En este video, el objetivo f
 
 
 video 28: Servicios -> se crean servicios dentro del modulo Tracks y este se usa allí y en el side bar, se muestra mediante programación reactiva como crear un observer y subscribirse a el y además indtroducirle un dato nuevo que aparece luego de 4 segundos, en este se uso Observer,of()  y el conecpto next que tiene un objeto tipo observer.
-
-video 29. Se sigue el ejercicio complementando al video 28
+Concepto de Form group y Form control -> variables que se deben definir en la clase del componente -> formLogin : FormGroup =  new FormGroup({});
+video 29. Se sigue el ejercicio complementando al video 28 
 
 ----//////#### SECCION 7 : HTTPClient, API y mÁS   ######////////////// ------------
 
@@ -71,5 +71,64 @@ Para manejar errores se muestra el uso de catchError e RxJS, para usarlo preferi
 Se explica el manejo del catch error , y su importancia.
 
 ----//////#### SECCION 8 : Proteger rutas con sesión de usuario.  ######////////////// ------------
-Video 33: Post Login y Cookie.
+
+Video 33: Post Login y Cookie: Se implementa en el auth.services.ts el uso de un post para enviar las credenciales de usuario.
+además se configuro y mostro el ejemplod de uso del token de sesion, tanto del lado del servicio como del lado del componente.
  
+Video 34: Guards - Vigilantes de las rutas -> ng generate guard ruta/nombre_guard  : Se le coloco un guardian a la ruta principal del homecomponent, estos guardianes
+se pueden usar para permitir el acceso a la ruta, en el ejemplo se validaba el usode token de sesion para permitir el paso, además de redirigir a otra ruta en caso de no tener el token
+
+Video 35:  Interceptores -> Inyectar propiedades directamente en las peticiones  , comando para generar un inyector: ng generate interceptor core/interceptors/InjectSession
+Se muestra un ejemplo de agregar un header con autorizathion token , pero si esto se hace manual por cada peticion que existe todo se vuelve un bololo, por ende nace
+la necesidad de usar inyectores, para manejarlo. En pocas palabras, toma un request y me permite meterle más info adicional, sin necesidad de escribir el codigo en el lugar del llamado
+
+
+----//////#### SECCION 9 : BUSCADOR, async Y MÁS DE RXJS.  ######////////////// ------------
+
+Vido 36 : Buscador Input -> Como capturar los eventos de la tecla y y como hacer una peticion hacia el backend, para evitar comportamientos que afecten
+el performance o comportamiento de la  aplicacion.
+	- Se crean en el modulo de History la carpeta components con el componente de busqueda "search"
+	- Se crea el servicio para hacer la peticion get 
+	- Desde el componente history-page, se hace uso del componente search y del play-list-body
+	- el componente hijo "search" retorna al padre "history-page" la información que tiene que buscar
+	a traves de @output 
+		- history-page usa el servicio y con la información del hijo, hace la peticion de la busqueda|
+		- luego toma un array con el resultado y se lo inyecta a play-list-body
+
+Video 37 : Pipe ASYNC  (Se quiere resolver el problema de generación de muchas peticiones de la implementación anterior)
+	- Se muestra el uso de pipe async en la etiqueta html de un componente, para indicar que alli angular se encarge de manejar la desubscripcion a un observable
+	con el fin de que la peticion solo sea tomada en cuanta la ultima vez que se lanza el evento, y no se genere una cola de peticiones en la aplicacion 
+
+Video 38 : RxJS observable : se explica haciendo comunicacion entre el servicio multimedia.service y el componente media-player-component
+		Se explica el concepto del observable, observer y sus estados de netx, complete, error, y como fluye.
+
+Video 39 : RxJs Subject y BehaviorSubjecT : 
+	- Subject -> es un objeto que es observable y observer al mismo tiempo , lo que le permite llamar el método next directamente.
+	- BehaviorSubject -> es un objeto igualmente observable y observer al mismo tiempo pero que se debe inicializar
+
+	-Ambbos observables funcionan igual, cambian sus comportamientos en términos de ciclos de vida -----> Estudiar la programación reactiva !!!!! 
+
+---------//////###### SECCION 10:  REPRODUCTOR DE AUDIO #######\\\\\\\\\\\\ -----------------------------
+
+Video 40: Dale play a tu reproductor : Se trabaja en el componente media-player-component , se usa el multimedia service de manera publica, para darle dinamismo a la app desde el HTML y no desde el typescript.
+	- En el servicio de multimedia.service se usa public audio!:HTMLAudioElement;  el cual se le inyecta  el src, de donde va a traer la canción y este es un elemento tipo audio :D
+	- en multimedia.service también se crea el BehaviorSubject -> public trackInfo$: BehaviorSubject<any> = new BehaviorSubject(undefined) -> Ahí mismo en el constructor nos subscribimos para escuchar el track que llega y lograr pasar el url del track al audio element.
+
+Video 41: Obtener tiempo transcurrido y restante de la canción : 
+	- Ver documentación de HTML de las etiquetas audio/video -> Aquí vamos a escuchar eventos.
+	- En el archivo multimedia.service se hizo la lógica para el tema del tiempo actual y el faltante en la vista del htlm en el media-player-component
+
+
+Video 42 Pause y Play : Se trabaja en los eventos de la etiqueta audio para capturar eventos de pausa y play, para asi cambiar en la vista el icono dependiendo del estado, además de pausar y continuar la canción.
+
+Video 43: Mostrar Progreso del Reproductor : Se realiza el calculo para mostrar el progreso del reproductor, haciendo el calculo con el tiempo de duracion de la cancion, el tiempo actual y modificando el estilo with del componente HTML que contiene el diseño del progress bar
+
+Video 44: Navegar mediante la barra de progreso :  Se agrega la funcionalidad, en el multimedia.service  y el media-player.component para que al dar click sobre el progressBar , se pueda aumentar le tiempo de la cancion en donde demos click
+
+
+
+---------//////###### SECCION 11:  TESTING #######\\\\\\\\\\\\ -----------------------------
+
+Video 45 : Iniciando Testing: Se arreglan los modulos de los testing para poder iniciar a crear las pruebas unitarias.
+
+
