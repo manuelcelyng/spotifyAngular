@@ -12,7 +12,7 @@ export class AuthService {
 
   private URL= environment.api
 
-  constructor(private http:HttpClient, private cookie:CookieService) {}
+  constructor(private http:HttpClient) {}
 
   sendCredentials(email:string, password:string):Observable<any>{  //TODO por defecto un metodo es publico
     

@@ -131,4 +131,14 @@ Video 44: Navegar mediante la barra de progreso :  Se agrega la funcionalidad, e
 
 Video 45 : Iniciando Testing: Se arreglan los modulos de los testing para poder iniciar a crear las pruebas unitarias.
 
+Video 46: Componentes - Test: Se realizan los test a nivel de componente, en este caso al componente "login-page-component" al elemento Formulario
 
+Video 47: Servicio - Test: Se realizan los test a nivel del servicio Auth.service usndo el HttpClientTestingModule para evaluar una petición Post de el metodo sendCredentiald
+
+Video 48: Pipe - Test: Se realizan los test a nivel de un Pipe - en este caso fue el "order-list.pipe" validando que el filtro realizado si resulte con lo esperado
+
+Video 49: Reporte de cobertura - Test: Se explica como obtener el report de cobertura, sus porcentajes de testing etc. -> ng test y habilitar el codeCoverag en el angular.json
+
+Video 50: Directiva - Test: Se hace un test a la directiva del ImageBroken -> importante conocer la creación de un componente el cual use la directiva en el testing propiamente -> Ver archivo "img-broken.directive.spec.ts"  Para estudiar el test :D
+
+Hasta Aquí se finaliza la realización de la App Spotify CLON :D  a continuación siguen secciones 12 - 13  y 14 para complementar.
